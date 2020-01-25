@@ -1,5 +1,6 @@
-console.log("Hello");
-
+/**
+ * Map example
+ */
 const numbers = [2, 4, 8];
 
 const addTwo = number => number + 2;
@@ -17,3 +18,23 @@ function mapArray(transform, array) {
 }
 
 console.log(result);
+
+/**
+ * Filter example
+ */
+const isMoreThan5 = number => number > 5;
+
+const filterResult = filterArray(isMoreThan5, numbers);
+
+function filterArray(predicate, array) {
+  let filteredArray = [];
+  for (let i = 0; i < array.length; i++) {
+    const currentItem = array[i];
+    if (predicate(currentItem)) {
+      filteredArray.push(currentItem);
+    }
+  }
+  return filteredArray;
+}
+
+console.log(filterResult);
